@@ -1,0 +1,44 @@
+/* CSS RESET */
+*, *::before *::after{
+    box-sizing:border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html, body {
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+input, textarea, select {
+    font: inherit;
+}
+
+/* STYLE START */
+:root {
+    --background: white;
+    --foreground: black;
+    --accent-one: red;
+    --accent-two: yellow;
+}
+
+/* IDs */
+
+/* CLASSES */
+
+/* ANIMATION */
+
+/* MOBILE SUPPORT */
+
+@media only screen and (max-width:500px) {
+
+    /* IDs */
+
+    /* CLASSES */
+
+    /* ANIMATION */
+
+}
