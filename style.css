@@ -28,9 +28,30 @@ input, textarea, select {
 /* IDs */
 #main{
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 350px 1fr;
     height: 100%;
     align-items: center;
+}
+#panelLeft{
+    height: 100%;
+    background: center url("../assets/Background.jpg");
+}
+#ribbon{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100px;
+    color: white;
+    font-family: 'Redressed', sans-serif;
+    font-size: 48px;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 150px;
+    user-select: none;
+}
+#logo{
+    height: 48px;
 }
 /* CLASSES */
 
