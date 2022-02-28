@@ -11,6 +11,8 @@ html, body {
     padding: 0;
     height: 100%;
     width: 100%;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: rgb(36, 36, 36);
 }
 
 input, textarea, select {
@@ -20,11 +22,30 @@ input, textarea, select {
 /* STYLE START */
 :root {
     --background: white;
-    --foreground: black;
-    --accent-one: red;
-    --accent-two: yellow;
+    --foreground: rgb(54, 54, 54);
+    --accent-one: #cc5f4f;
+    --accent-two: #e47564;
 }
 
+a{
+    color: var(--accent-one);
+    text-decoration: none;
+}
+
+a:visited{
+    color: var(--accent-two);
+}
+
+legend{
+    font-weight: bold;
+    font-size: 24px;
+    padding-top: 10px;
+    color: var(--accent-one);
+}
+label{
+    font-size: 14px;
+    color: var(--foreground);
+}
 /* IDs */
 #main{
     display: grid;
@@ -98,6 +119,9 @@ input, textarea, select {
 .field{
     display: flex;
     flex-direction: column;
+}
+.bold{
+    font-weight: bold;
 }
 /* ANIMATION */
 
