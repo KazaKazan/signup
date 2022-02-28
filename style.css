@@ -115,6 +115,25 @@ label{
     grid-template: 1fr 1fr 1fr 1fr / 40% 40%;
     gap: 10px 10%;
 }
+#submit{
+    background-color: #cc5f4f;
+    color: white;
+    height: 50px;
+    width: 200px;
+    border: none;
+    border-radius: 10px;
+    box-shadow: none;
+}
+#submit:hover{
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.125);
+}
+#submit:active{
+    box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.125);
+}
+#submit:disabled{
+    color: #e47564;
+    box-shadow: none;
+}
 /* CLASSES */
 .field{
     display: flex;
