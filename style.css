@@ -141,6 +141,24 @@ input{
     color: #e47564;
     box-shadow: none;
 }
+#infoPanel{
+    height: 80%;
+    background-color: var(--accent-one);
+    padding: 10px;
+    margin-right: 30px;
+    max-width: 300px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#infoPanel *{
+    margin-bottom: 10px;
+}
+#infoUsageTitle, #infoFormatTitle{
+    font-weight: bold;
+}
 /* CLASSES */
 .field{
     display: flex;
@@ -175,6 +193,9 @@ input{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.hidden{
+    visibility: hidden;
 }
 /* ANIMATION */
 
