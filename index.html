@@ -25,24 +25,40 @@
                 <i>Experience the world, sign up today!</i>
             </div>
             <form action="#" method="post">
-                <fieldset id="formInputField">
-                    <legend>Sign Up </legend>
-                    <i>All fields are required.</i>
-                    <label for="fname">First Name</label>
-                    <input type="text" id="fname" name="fname" required>
-                    <label for="lname">Last Name</label>
-                    <input type="text" id="lname" name="lname" required>
-                    <label for="mail">E-Mail</label>
-                    <input type="email" name="mail" id="mail" required>
-                    <label for="phone">Phone Number</label>
-                    <input type="text" id="phone" name="phone" required>
-                    <label for="password">Password</label>
-                    <input type="password" name="password" id="password" required>
-                    <label for="pconfirm">Confirm Password</label>
-                    <input type="password" id="pconfirm" name="pconfirm" required>
-                </fieldset>
-                <input type="submit" value="Create Account" id="submit" disabled>
-                <p><i>Already have an account?</i> <a href="#">Sign In</a></p>
+                <div id="fieldsetBg">
+                    <fieldset id="fieldset">
+                        <div><legend>Sign Up</legend></div>
+                        <div></div>
+                        <div class="field">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="fname" required>
+                        </div>
+                        <div class="field">
+                            <label for="lname">Last Name</label>
+                            <input type="text" id="lname" name="lname" required>
+                        </div>
+                        <div class="field">
+                            <label for="mail">E-Mail</label>
+                            <input type="email" name="mail" id="mail" required>
+                        </div>
+                        <div class="field">
+                            <label for="phone">Phone Number</label>
+                            <input type="text" id="phone" name="phone" required>
+                        </div>
+                        <div class="field">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" required>
+                        </div>
+                        <div class="field">
+                            <label for="pconfirm">Confirm Password</label>
+                            <input type="password" id="pconfirm" name="pconfirm" required>
+                        </div>              
+                    </fieldset>
+                </div>
+                <div>
+                    <input type="submit" value="Create Account" id="submit" disabled>
+                    <p><i>Already have an account?</i> <a href="#">Sign In</a></p>
+                </div>
             </form>
         </div>
     </div>
