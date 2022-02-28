@@ -21,7 +21,7 @@ input, textarea, select {
 
 /* STYLE START */
 :root {
-    --background: white;
+    --background: rgb(245, 245, 245);
     --foreground: rgb(54, 54, 54);
     --accent-one: #cc5f4f;
     --accent-two: #e47564;
@@ -39,12 +39,19 @@ a:visited{
 legend{
     font-weight: bold;
     font-size: 24px;
-    padding-top: 10px;
+    padding-top: 20px;
     color: var(--accent-one);
 }
 label{
     font-size: 14px;
+    font-weight: bold;
     color: var(--foreground);
+}
+input{
+    border: 1px solid rgb(220, 220, 220);
+    border-radius: 5px;
+    height: 24px;
+    margin-top: 5px;
 }
 /* IDs */
 #main{
@@ -80,7 +87,7 @@ label{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(245, 245, 245);
+    background-color: var(--background);
     font-family: sans-serif;
 }
 #panelRight > * > *{
@@ -104,18 +111,16 @@ label{
 #fieldsetBg{
     background-color: white;
     box-shadow: 0 5px 5px 3px rgba(0, 0, 0, 0.075);
-    height: 230px;
+    height: 280px;
     display: flex;
     align-items: center;
     padding-left: 90px;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 #fieldset{
     border: none;
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr / 40% 40%;
-    gap: 10px 10%;
+    gap: 5px 75px;
 }
 #submit{
     background-color: #cc5f4f;
@@ -140,9 +145,16 @@ label{
 .field{
     display: flex;
     flex-direction: column;
+    height: 60px;
 }
 .bold{
     font-weight: bold;
+}
+.error{
+    color: red;
+    font-size: 12px;
+    margin: 0;
+    padding: 0;
 }
 /* ANIMATION */
 
