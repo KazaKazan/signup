@@ -159,6 +159,23 @@ input{
 .fieldError{
     border-color: red;
 }
+.inputArea{
+    display: grid;
+    grid-template-columns: 85% 10%;
+    align-items: center;
+    gap: 5%;
+}
+.infoButton{
+    background-color: white;
+    border: 1px solid rgb(220, 220, 220);
+    height: 24px;
+    border-radius: 50%;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 /* ANIMATION */
 
 /* MOBILE SUPPORT */
