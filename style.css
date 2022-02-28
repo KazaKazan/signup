@@ -156,6 +156,9 @@ input{
     margin: 0;
     padding: 0;
 }
+.fieldError{
+    border-color: red;
+}
 /* ANIMATION */
 
 /* MOBILE SUPPORT */
