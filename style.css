@@ -146,6 +146,7 @@ input{
     flex-direction: column;
     justify-content: center;
     transition: 0.5s;
+    overflow-y: auto;
 }
 #infoPanel *{
     margin-bottom: 10px;
@@ -187,6 +188,10 @@ input{
     align-items: center;
     justify-content: center;
     cursor: pointer;
+}
+.active{
+    background-color: rgb(220, 220, 220);
+    color: white;
 }
 .hidden{
     opacity: 0;

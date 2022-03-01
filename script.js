@@ -6,6 +6,7 @@ const formValidator = (() => {
 })();
 
 const infoHandler = (() => {
+    let selected = null;
     //Info panel elements
     const infoPanel = document.getElementById("infoPanel");
     const usageText = document.getElementById("infoUsage");
@@ -47,24 +48,42 @@ const infoHandler = (() => {
         for(let i = 0; i < infoButtons.length; i++){
             infoButtons[i].onmouseenter = () =>  showInfo(i);
             infoButtons[i].onmouseleave = () =>  hideInfo();
+            infoButtons[i].onclick = () => buttonSelection(infoButtons[i]);
+        };
+    };
+    function buttonSelection(button){
+        if(selected !== button){
+            if(selected !== null){
+                selected.classList.remove("active");
+            };
+            selected = button;
+            selected.classList.add("active");
+        }
+        else{
+            selected.classList.remove("active");
+            selected = null;
         };
     };
     function showInfo(infoIndex){
-        const info = infoList[infoIndex];
-        usageText.textContent = info.usage;
-        if(info.formatBool === false){
-            formatTitle.classList.add("hidden");
-            formatText.classList.add("hidden");
-        }
-        else{
-            formatTitle.classList.remove("hidden");
-            formatText.classList.remove("hidden");
-            formatText.innerHTML = info.format;
+        if(selected == null){
+            const info = infoList[infoIndex];
+            usageText.textContent = info.usage;
+            if(info.formatBool === false){
+                formatTitle.classList.add("hidden");
+                formatText.classList.add("hidden");
+            }
+            else{
+                formatTitle.classList.remove("hidden");
+                formatText.classList.remove("hidden");
+                formatText.innerHTML = info.format;
+            };
+            infoPanel.classList.remove("hidden");
         };
-        infoPanel.classList.remove("hidden");
     };
     function hideInfo(){
-        infoPanel.classList.add("hidden");
+        if(selected == null){
+            infoPanel.classList.add("hidden");
+        };
     };
     return{
         initialize
