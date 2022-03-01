@@ -11,6 +11,7 @@ html, body {
     width: 100%;
     font-family: 'Roboto Condensed', sans-serif;
     color: var(--accent-two);
+    accent-color: var(--accent-one);
 }
 input, textarea, select {
     font: inherit;
@@ -23,6 +24,10 @@ input, textarea, select {
     --accent-one-light: #e47564;
     --accent-two: #383346;
     --accent-two-light: #4e485e;
+}
+::selection{
+    color: white;
+    background: var(--accent-two);
 }
 a{
     color: var(--accent-one);
@@ -159,6 +164,11 @@ input:focus{
 }
 #infoUsageTitle, #infoFormatTitle{
     font-weight: bold;
+}
+#buttonContainer{
+    display: grid;
+    grid-template-columns: 225px 1fr;
+    align-items: center;
 }
 /* CLASSES */
 .field{
