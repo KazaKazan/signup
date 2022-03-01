@@ -21,19 +21,19 @@ const infoHandler = (() => {
     const infoButtons = [nameBtn, lnameBtn, mailBtn, phoneBtn, pwdBtn];
     //Field Information
     const nameInfo = {
-        usage : "Your name will be used to pre-fill the necessary fields in travel forms.",
+        usage : "Your name will be used to pre-fill the necessary fields in travel forms. You can set this later in your account settings or fill forms manually.",
         formatBool : false
     };
     const lnameInfo = {
-        usage : "Your last name will be used to pre-fill the necessary fields in travel forms.",
+        usage : "Your last name will be used to pre-fill the necessary fields in travel forms. You can set this later in your account settings or fill forms manually.",
         formatBool : false
     };
     const mailInfo = {
-        usage : "Your e-mail address will be used for signing in and to contact you about account and travel updates. No spam!",
+        usage : "Your e-mail address will be used for signing in and to contact you about account and travel updates. No spam, we promise!",
         formatBool : false
     };
     const phoneInfo = {
-        usage : "Your phone number will be used to pre-fill the necessary fields in travel forms as well as sending you confirmation messages and ticket information.",
+        usage : "Your phone number will be used to pre-fill the necessary fields in travel forms as well as sending you confirmation messages and ticket information. You can set this later in your account settings or fill forms manually.",
         formatBool : true,
         format : "<ul><li>Your number must start with a country code. (eg. +1)</li><li>Your number must not contain any characters other than + and numbers.</li></ul>"
     };
