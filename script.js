@@ -69,7 +69,10 @@ const formValidator = (() => {
                 };
                 break;
             case 5:
-                if(fields[5].value !== fields[4].value){
+                if(fields[5].value === ""){
+                    break;
+                }
+                else if(fields[5].value !== fields[4].value){
                     checkResult = false;
                     errorMessage = "Your passwords do not match.";
                 };
