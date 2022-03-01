@@ -10,7 +10,7 @@ html, body {
     height: 100%;
     width: 100%;
     font-family: 'Roboto Condensed', sans-serif;
-    color: rgb(36, 36, 36);
+    color: var(--accent-two);
 }
 input, textarea, select {
     font: inherit;
@@ -20,25 +20,25 @@ input, textarea, select {
     --background: rgb(245, 245, 245);
     --foreground: rgb(54, 54, 54);
     --accent-one: #cc5f4f;
-    --accent-two: #e47564;
+    --accent-one-light: #e47564;
+    --accent-two: #383346;
+    --accent-two-light: #4e485e;
 }
 a{
     color: var(--accent-one);
     text-decoration: none;
 }
 a:visited{
-    color: var(--accent-two);
+    color: var(--accent-one-light);
 }
 legend{
     font-weight: bold;
     font-size: 24px;
     padding-top: 20px;
-    color: var(--accent-one);
 }
 label{
     font-size: 14px;
     font-weight: bold;
-    color: var(--foreground);
 }
 input{
     border: 1px solid rgb(220, 220, 220);
@@ -116,7 +116,7 @@ input{
     gap: 5px 75px;
 }
 #submit{
-    background-color: #cc5f4f;
+    background-color: var(--accent-one);
     color: white;
     height: 50px;
     width: 200px;
@@ -131,11 +131,11 @@ input{
     box-shadow: inset 5px 5px 5px 5px rgba(0, 0, 0, 0.125);
 }
 #submit:disabled{
-    color: #e47564;
+    color: var(--accent-one-light);
     box-shadow: none;
 }
 #infoPanel{
-    background-color: var(--accent-one);
+    background-color: var(--accent-two);
     padding: 10px;
     padding-top: 20px;
     margin-right: 30px;
