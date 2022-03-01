@@ -55,6 +55,8 @@ const infoHandler = (() => {
         if(selected !== button){
             if(selected !== null){
                 selected.classList.remove("active");
+                selected = null;
+                showInfo(infoButtons.indexOf(button));
             };
             selected = button;
             selected.classList.add("active");
