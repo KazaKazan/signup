@@ -1,7 +1,92 @@
 const formValidator = (() => {
-
+    //Input fields
+    const nameField = document.getElementById("fname");
+    const lnameField = document.getElementById("lname");
+    const mailField = document.getElementById("mail");
+    const phoneField = document.getElementById("phone");
+    const pwdField = document.getElementById("password");
+    const pconfirmField = document.getElementById("pconfirm");
+    const fields = [nameField, lnameField, mailField, phoneField, pwdField, pconfirmField];
+    //Confirm Button
+    const confirmButton = document.getElementById("submit");
+    //Functions
+    function initialize(){
+        for(let i = 0; i < fields.length; i++){
+            fields[i].oninput = () => checkAll();
+        };
+    };
+    function checkAll(){
+        let checkResult = true;
+        for(let i = 0; i < fields.length; i++){
+            checkResult = checkField(i);
+        };
+        if(fields[2].value === "" || fields[4].value === "" || fields[5].value === ""){
+            checkResult = false;
+        };
+        if(checkResult === true){
+            confirmButton.disabled = false;
+        }
+        else{
+            confirmButton.disabled = true;
+        };
+    };
+    function checkField(i){
+        let checkResult = true;
+        let errorMessage = "";
+        switch(i){
+            case 3:
+                if(fields[3].value === ""){
+                    break;
+                }
+                if(!/^\+/.test(fields[3].value)){
+                    checkResult = false;
+                    errorMessage = "Your phone number must start with an area code."
+                }
+                else if(!/^[\+][0-9]+$/.test(fields[3].value)){
+                    checkResult = false;
+                    errorMessage = "Your phone number must only contain numbers."
+                };
+                break;
+            case 4:
+                if(fields[4].value === ""){
+                    break;
+                }
+                else if(!/[a-z]/.test(fields[4].value)){
+                    checkResult = false;
+                    errorMessage = "Your password must contain at least one lower-case letter.";
+                }
+                else if(!/[A-Z]/.test(fields[4].value)){
+                    checkResult = false;
+                    errorMessage = "Your password must contain at least one upper-case letter.";
+                }
+                else if(!/[0-9]/.test(fields[4].value)){
+                    checkResult = false;
+                    errorMessage = "Your password must contain at least one number.";
+                }
+                else if(fields[4].value.length < 8){
+                    checkResult = false;
+                    errorMessage = "Your password must be at least 8 characters long.";
+                };
+                break;
+            case 5:
+                if(fields[5].value !== fields[4].value){
+                    checkResult = false;
+                    errorMessage = "Your passwords do not match.";
+                };
+                break;
+        };
+        if(checkResult === true){
+            fields[i].classList.remove("fieldError");
+            fields[i].parentElement.parentElement.querySelector(".error").textContent = errorMessage;
+        }
+        else{
+            fields[i].classList.add("fieldError");
+            fields[i].parentElement.parentElement.querySelector(".error").textContent = errorMessage;
+        };
+        return checkResult;
+    };
     return{
-        
+        initialize
     };
 })();
 
@@ -46,8 +131,8 @@ const infoHandler = (() => {
     //Functions
     function initialize(){
         for(let i = 0; i < infoButtons.length; i++){
-            infoButtons[i].onmouseenter = () =>  showInfo(i);
-            infoButtons[i].onmouseleave = () =>  hideInfo();
+            infoButtons[i].onmouseenter = () => showInfo(i);
+            infoButtons[i].onmouseleave = () => hideInfo();
             infoButtons[i].onclick = () => buttonSelection(infoButtons[i]);
         };
     };
@@ -93,11 +178,10 @@ const infoHandler = (() => {
 })();
 
 const initializer = (() => {
-
     function start(){
         infoHandler.initialize();
+        formValidator.initialize();
     };
-
     return{
         start
     };
