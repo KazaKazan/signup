@@ -147,6 +147,7 @@ input{
     justify-content: center;
     transition: 0.5s;
     overflow-y: auto;
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.075);
 }
 #infoPanel *{
     margin-bottom: 10px;
@@ -190,7 +191,8 @@ input{
     cursor: pointer;
 }
 .active{
-    background-color: rgb(220, 220, 220);
+    background-color: var(--accent-one);
+    border-color: var(--accent-one);
     color: white;
 }
 .hidden{
