@@ -2,11 +2,9 @@
 *, *::before *::after{
     box-sizing:border-box;
 }
-
 * {
     margin: 0;
 }
-
 html, body {
     padding: 0;
     height: 100%;
@@ -14,11 +12,9 @@ html, body {
     font-family: 'Roboto Condensed', sans-serif;
     color: rgb(36, 36, 36);
 }
-
 input, textarea, select {
     font: inherit;
 }
-
 /* STYLE START */
 :root {
     --background: rgb(245, 245, 245);
@@ -26,16 +22,13 @@ input, textarea, select {
     --accent-one: #cc5f4f;
     --accent-two: #e47564;
 }
-
 a{
     color: var(--accent-one);
     text-decoration: none;
 }
-
 a:visited{
     color: var(--accent-two);
 }
-
 legend{
     font-weight: bold;
     font-size: 24px;
