@@ -145,6 +145,7 @@ input{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    transition: 0.5s;
 }
 #infoPanel *{
     margin-bottom: 10px;
@@ -188,7 +189,7 @@ input{
     cursor: pointer;
 }
 .hidden{
-    visibility: hidden;
+    opacity: 0;
 }
 /* ANIMATION */
 
