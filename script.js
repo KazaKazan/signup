@@ -1,6 +1,5 @@
 const formValidator = (() => {
     let timer = 0;
-    let initialValue = "";
     let focusIndex = -1;
     //Input fields
     const nameField = document.getElementById("fname");
@@ -9,6 +8,7 @@ const formValidator = (() => {
     const phoneField = document.getElementById("phone");
     const pwdField = document.getElementById("password");
     const pconfirmField = document.getElementById("pconfirm");
+    const agreementBox = document.getElementById("agreement");
     const fields = [nameField, lnameField, mailField, phoneField, pwdField, pconfirmField];
     //Confirm Button
     const confirmButton = document.getElementById("submit");
@@ -18,6 +18,7 @@ const formValidator = (() => {
             fields[i].onfocus = () => setFocus(i);
             fields[i].oninput = () => refreshTimer();
         };
+        agreementBox.onclick = () => checkAll();
         timerIncrement()
     };
     function checkAll(){
@@ -27,7 +28,7 @@ const formValidator = (() => {
                 checkResult = false;
             }
         };
-        if(fields[2].value === "" || fields[4].value === "" || fields[5].value === ""){
+        if(fields[2].value === "" || fields[4].value === "" || fields[5].value === "" || agreementBox.checked === false){
             checkResult = false;
         };
         if(checkResult === true){
@@ -103,7 +104,6 @@ const formValidator = (() => {
     };
     function setFocus(index){
         timer = 1;
-        initialValue = fields[index].value;
         focusIndex = index;
     };
     function refreshTimer(){
@@ -115,10 +115,8 @@ const formValidator = (() => {
         }
         await new Promise(resolve => setTimeout(resolve, 200));
         if(focusIndex !== -1 && timer === 0){
-            if(fields[focusIndex].value !== initialValue){
-                const checkResult = checkField(focusIndex);
-                checkAll()
-            };
+            const checkResult = checkField(focusIndex);
+            checkAll();
         };
         timerIncrement()
     };

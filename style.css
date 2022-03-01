@@ -205,6 +205,18 @@ input:focus{
     opacity: 0;
     display: none;
 }
+.checkboxContainer{
+    display: grid;
+    grid-template-columns: 16px 1fr;
+    align-items: center;
+    gap: 10px;
+}
+.checkboxContainer > input{
+    grid-row-start: 1;
+}
+.checkboxContainer > label{
+    padding-top: 5px;
+}
 /* ANIMATION */
 
 /* MOBILE SUPPORT */
