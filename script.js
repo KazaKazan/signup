@@ -18,11 +18,14 @@ const formValidator = (() => {
     function checkAll(){
         let checkResult = true;
         for(let i = 0; i < fields.length; i++){
-            checkResult = checkField(i);
+            if(checkField(i) === false){
+                checkResult = false;
+            }
         };
         if(fields[2].value === "" || fields[4].value === "" || fields[5].value === ""){
             checkResult = false;
         };
+        console.log(checkResult)
         if(checkResult === true){
             confirmButton.disabled = false;
         }
@@ -38,7 +41,11 @@ const formValidator = (() => {
                 if(fields[3].value === ""){
                     break;
                 }
-                if(!/^\+/.test(fields[3].value)){
+                else if(fields[3].value === "+"){
+                    checkResult = false;
+                    errorMessage = "Your phone number must contain numbers."
+                }
+                else if(!/^\+/.test(fields[3].value)){
                     checkResult = false;
                     errorMessage = "Your phone number must start with an area code."
                 }
