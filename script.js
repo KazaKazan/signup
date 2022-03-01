@@ -1,4 +1,7 @@
 const formValidator = (() => {
+    let timer = 0;
+    let initialValue = "";
+    let focusIndex = -1;
     //Input fields
     const nameField = document.getElementById("fname");
     const lnameField = document.getElementById("lname");
@@ -12,20 +15,21 @@ const formValidator = (() => {
     //Functions
     function initialize(){
         for(let i = 0; i < fields.length; i++){
-            fields[i].oninput = () => checkAll();
+            fields[i].onfocus = () => setFocus(i);
+            fields[i].oninput = () => refreshTimer();
         };
+        timerIncrement()
     };
     function checkAll(){
         let checkResult = true;
         for(let i = 0; i < fields.length; i++){
-            if(checkField(i) === false){
+            if(checkField(i,false) === false){
                 checkResult = false;
             }
         };
         if(fields[2].value === "" || fields[4].value === "" || fields[5].value === ""){
             checkResult = false;
         };
-        console.log(checkResult)
         if(checkResult === true){
             confirmButton.disabled = false;
         }
@@ -33,7 +37,7 @@ const formValidator = (() => {
             confirmButton.disabled = true;
         };
     };
-    function checkField(i){
+    function checkField(i,verbose=true){
         let checkResult = true;
         let errorMessage = "";
         switch(i){
@@ -91,9 +95,32 @@ const formValidator = (() => {
         }
         else{
             fields[i].classList.add("fieldError");
-            fields[i].parentElement.parentElement.querySelector(".error").textContent = errorMessage;
+            if(verbose === true){
+                fields[i].parentElement.parentElement.querySelector(".error").textContent = errorMessage;
+            };
         };
         return checkResult;
+    };
+    function setFocus(index){
+        timer = 1;
+        initialValue = fields[index].value;
+        focusIndex = index;
+    };
+    function refreshTimer(){
+        timer = 1
+    };
+    async function timerIncrement(){
+        if(timer !== 0){
+            timer--
+        }
+        await new Promise(resolve => setTimeout(resolve, 200));
+        if(focusIndex !== -1 && timer === 0){
+            if(fields[focusIndex].value !== initialValue){
+                const checkResult = checkField(focusIndex);
+                checkAll()
+            };
+        };
+        timerIncrement()
     };
     return{
         initialize
